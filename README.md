@@ -73,7 +73,7 @@ Antibiotic resistance is a major public health threat, making infections harder 
 
 ## Author
 Juan Tavira  
-Data Science Master's Graduate with experience healthcare technology
+Data Science Master's Graduate with experience in healthcare technology
 
 ## How to Use
 1. Clone this repo
