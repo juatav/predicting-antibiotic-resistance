@@ -1,0 +1,22 @@
+# Mac system files
+.DS_Store
+
+# VS Code settings
+.vscode/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Raw unprocessed data
+data/raw/
+
+# Logs or temp
+*.log
+*.tmp
+
+# OS
+Thumbs.db
