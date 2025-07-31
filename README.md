@@ -79,4 +79,5 @@ Data Science Master's Graduate with experience in healthcare technology
 1. Clone this repo
 2. Install requirements
 3. Run `data_cleaning.py` on raw CSVs
-4. Run `classification_model.py` to train and evaluate
+4. Run `transform_combined.py` to generate CSV for classification model
+6. Run `classification_model.py` to train and evaluate
