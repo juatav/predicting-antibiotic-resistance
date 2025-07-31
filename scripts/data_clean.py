@@ -2,7 +2,7 @@ import os
 import pandas as pd
 
 # Base directory where DRIAMS data is located
-base_dir = "/Users/juanctavira/Desktop/AMR/predicting-antibiotic-resistance/driams_dataset"
+base_dir = "/Users/juanctavira/Desktop/AMR/predicting-antibiotic-resistance/data/raw/driams_dataset"
 site = "A"
 years = ["2015", "2016", "2017", "2018"]
 
@@ -47,10 +47,14 @@ for year in years:
     except Exception as e:
         print(f" Error processing {year}: {e}")
 
-# Combine all years
+# Combine and save to interim folder
 if all_years:
     combined = pd.concat(all_years, ignore_index=True)
-    combined_out = os.path.join(base_dir, f"DRIAMS-{site}", "combined_strat_clean.csv")
+    
+    interim_dir = os.path.join("data", "interim")
+    os.makedirs(interim_dir, exist_ok=True)
+
+    combined_out = os.path.join(interim_dir, "combined_strat_clean.csv")
     combined.to_csv(combined_out, index=False)
     print(f"\n Combined dataset saved to: {combined_out}")
 else:

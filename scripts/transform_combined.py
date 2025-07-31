@@ -1,7 +1,8 @@
 import pandas as pd
+import os
 
 # Load the combined strat clean file
-df = pd.read_csv("/Users/juanctavira/Desktop/AMR/predicting-antibiotic-resistance/combined_strat_clean.csv")
+df = pd.read_csv("/Users/juanctavira/Desktop/AMR/predicting-antibiotic-resistance/data/interim/combined_strat_clean.csv")
 
 # Drop any unnamed index columns
 df = df.loc[:, ~df.columns.str.contains('^Unnamed')]
@@ -28,5 +29,8 @@ print(f"Final shape: {df_long.shape}")
 print(" Preview:\n", df_long.head())
 
 # Save to file
-df_long.to_csv("resistance_long_format.csv", index=False)
-print("Saved long-format resistance data to: resistance_long_format.csv")
+output_path = os.path.join("data", "processed", "resistance_long_format.csv")
+
+# Save to the processed folder
+df_long.to_csv(output_path, index=False)
+print(f"Saved long-format resistance data to: {output_path}")
